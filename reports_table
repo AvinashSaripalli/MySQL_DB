@@ -1,0 +1,16 @@
+CREATE TABLE reports (
+    id INT NOT NULL AUTO_INCREMENT,
+    employeeId VARCHAR(50) NOT NULL,
+    date DATE NOT NULL,
+    taskName VARCHAR(255),
+    workDescription TEXT,
+    hoursWorked VARCHAR(8),
+    status VARCHAR(255) DEFAULT 'Pending',
+    department VARCHAR(255),
+    feedback VARCHAR(1000) DEFAULT 'Pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    companyName VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id),
+    INDEX (employeeId),
+    FOREIGN KEY (employeeId) REFERENCES employees(employeeId) ON DELETE CASCADE ON UPDATE CASCADE
+);
