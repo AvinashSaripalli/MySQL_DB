@@ -13,7 +13,7 @@ CREATE TABLE leaves (
     companyName VARCHAR(255) NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (employeeId) REFERENCES users(employeeId),
-    FOREIGN KEY (companyName) REFERENCES users(companyName)
+ 
 );
 
 -- Creating table for reports
@@ -31,7 +31,7 @@ CREATE TABLE reports (
     companyName VARCHAR(100) NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (employeeId) REFERENCES users(employeeId),
-    FOREIGN KEY (companyName) REFERENCES users(companyName)
+  
 );
 
 -- Creating table for workgroups
@@ -44,7 +44,7 @@ CREATE TABLE workgroups (
     partnerCompanyName VARCHAR(100),
     PRIMARY KEY (id),
     FOREIGN KEY (employeeId) REFERENCES users(employeeId),
-    FOREIGN KEY (companyName) REFERENCES users(companyName)
+ ]
 );
 
 -- Creating table for attendance
@@ -64,7 +64,7 @@ CREATE TABLE attendance (
     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id),
     FOREIGN KEY (employeeId) REFERENCES users(employeeId),
-    FOREIGN KEY (companyName) REFERENCES users(companyName)
+  
 );
 
 -- Creating table for users
