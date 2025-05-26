@@ -1,0 +1,11 @@
+CREATE TABLE workgroups (
+    id INT NOT NULL AUTO_INCREMENT,
+    companyName VARCHAR(100),
+    createdOn DATE,
+    privacyType ENUM('public', 'private'),
+    employeeId VARCHAR(50),
+    partnerCompanyName VARCHAR(100),
+    PRIMARY KEY (id),
+    INDEX (employeeId),
+    FOREIGN KEY (employeeId) REFERENCES users(employeeId) ON DELETE CASCADE ON UPDATE CASCADE
+);
