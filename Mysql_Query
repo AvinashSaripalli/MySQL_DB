@@ -1,0 +1,95 @@
+-- Creating table for leaves
+CREATE TABLE leaves (
+    id INT NOT NULL AUTO_INCREMENT,
+    employeeId VARCHAR(50) NOT NULL,
+    leave_type VARCHAR(255) NOT NULL,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    reason TEXT NOT NULL,
+    only_tomorrow TINYINT(1) DEFAULT 0,
+    half_day TINYINT(1) DEFAULT 0,
+    status ENUM('Pending', 'Approved', 'Rejected') DEFAULT 'Pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    companyName VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (employeeId) REFERENCES users(employeeId),
+    FOREIGN KEY (companyName) REFERENCES users(companyName)
+);
+
+-- Creating table for reports
+CREATE TABLE reports (
+    id INT NOT NULL AUTO_INCREMENT,
+    employeeId VARCHAR(255) NOT NULL,
+    date DATE NOT NULL,
+    taskName VARCHAR(255),
+    workDescription TEXT,
+    hoursWorked VARCHAR(8),
+    status VARCHAR(255) DEFAULT 'Pending',
+    department VARCHAR(255),
+    feedback VARCHAR(1000) DEFAULT 'Pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    companyName VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (employeeId) REFERENCES users(employeeId),
+    FOREIGN KEY (companyName) REFERENCES users(companyName)
+);
+
+-- Creating table for workgroups
+CREATE TABLE workgroups (
+    id INT NOT NULL,
+    companyName VARCHAR(100),
+    createdOn DATE,
+    privacyType ENUM('public', 'private'),
+    employeeId VARCHAR(50),
+    partnerCompanyName VARCHAR(100),
+    PRIMARY KEY (id),
+    FOREIGN KEY (employeeId) REFERENCES users(employeeId),
+    FOREIGN KEY (companyName) REFERENCES users(companyName)
+);
+
+-- Creating table for attendance
+CREATE TABLE attendance (
+    id INT NOT NULL AUTO_INCREMENT,
+    employeeId VARCHAR(50) NOT NULL,
+    companyName VARCHAR(100) NOT NULL,
+    firstName VARCHAR(50),
+    lastName VARCHAR(50),
+    email VARCHAR(100),
+    department VARCHAR(50),
+    designation VARCHAR(50),
+    clockInDate DATE NOT NULL,
+    clockInTime TIME NOT NULL,
+    clockOutTime TIME,
+    workedTime TIME,
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    FOREIGN KEY (employeeId) REFERENCES users(employeeId),
+    FOREIGN KEY (companyName) REFERENCES users(companyName)
+);
+
+-- Creating table for users
+CREATE TABLE users (
+    id INT NOT NULL AUTO_INCREMENT,
+    firstName VARCHAR(100),
+    lastName VARCHAR(100),
+    email VARCHAR(255),
+    phoneNumber VARCHAR(20),
+    password VARCHAR(255),
+    companyName VARCHAR(255),
+    role ENUM('Admin', 'Manager', 'Employee'),
+    designation VARCHAR(255),
+    department VARCHAR(255),
+    jobLocation VARCHAR(255),
+    dateOfBirth DATE,
+    bloodGroup VARCHAR(10),
+    photo VARCHAR(255),
+    technicalSkills TEXT,
+    employeeId VARCHAR(50),
+    gender ENUM('Male', 'Female'),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    exists TINYINT(1) DEFAULT 1,
+    confirmPassword VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id),
+    UNIQUE (email),
+    UNIQUE (employeeId)
+);
