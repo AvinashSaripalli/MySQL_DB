@@ -1,0 +1,23 @@
+CREATE TABLE users (
+    id INT NOT NULL AUTO_INCREMENT,
+    firstName VARCHAR(100),
+    lastName VARCHAR(100),
+    email VARCHAR(255) UNIQUE,
+    phoneNumber VARCHAR(20),
+    password VARCHAR(255),
+    companyName VARCHAR(255),
+    role ENUM('Admin', 'Manager', 'Employee'),
+    designation VARCHAR(255),
+    department VARCHAR(255),
+    jobLocation VARCHAR(255),
+    dateOfBirth DATE,
+    bloodGroup VARCHAR(10),
+    photo VARCHAR(255),
+    technicalSkills TEXT,
+    employeeId VARCHAR(50) UNIQUE,
+    gender ENUM('Male', 'Female'),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    exists TINYINT(1) DEFAULT 1,
+    confirmPassword VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
