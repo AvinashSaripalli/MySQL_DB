@@ -102,6 +102,7 @@ CREATE TABLE leave_details (
     end_date DATE NOT NULL,
     reason VARCHAR(1000) NOT NULL,
     leave_status_id VARCHAR(10) NOT NULL,
+    approved_date DATE,
     is_active BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     modified_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP

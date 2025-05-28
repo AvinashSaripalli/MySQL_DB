@@ -44,6 +44,7 @@ SELECT
     ld.start_date,
     ld.end_date,
     ld.reason,
+    ld.approved_date,
     ld.leave_status_id,
     ls.leave_status_name,
     ld.is_active AS leave_is_active,
