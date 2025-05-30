@@ -125,7 +125,7 @@ CREATE TABLE leave_details (
 );
 CREATE TABLE company_details (
     company_id VARCHAR(10) DEFAULT ('COM' || nextval('company_details_seq')) PRIMARY KEY,
-    company_name VARCHAR(100),
+    company_name VARCHAR(100) NOT NULL,
     gstin VARCHAR(15),
     pan VARCHAR(10),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -268,6 +268,9 @@ INSERT INTO city_master (city_name) VALUES
 ('Mumbai'),
 ('Bangalore'),
 ('Kolkata');
+
+INSERT INTO company_details (company_name, gstin, pan) VALUES
+('Karncy Ventures Private Limited' ,'SDFAC1235C' ,'36AACCO3611Q1Z7');
 
 --VIEW START
 

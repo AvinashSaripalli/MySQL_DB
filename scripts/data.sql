@@ -67,3 +67,6 @@ INSERT INTO city_master (city_name) VALUES
 ('Mumbai'),
 ('Bangalore'),
 ('Kolkata');
+
+INSERT INTO company_details (company_name, gstin, pan) VALUES
+('Karncy Ventures Private Limited' ,'SDFAC1235C' ,'36AACCO3611Q1Z7');
