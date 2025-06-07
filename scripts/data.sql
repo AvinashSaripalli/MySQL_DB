@@ -39,12 +39,62 @@ INSERT INTO designation_master (designation_name) VALUES
 
 -- skill_master
 INSERT INTO skill_master (skill_name) VALUES
-('Java'),
-('Nodejs'),
-('React'),
+('Adobe Photoshop'),
+('Figma Sketch'),
+('Adobe XD'),
+('UI/UX Principles'),
+('Manual Testing'),
+('Selenium'),
+('Cypress'),
+('TestRail'),
+('Zephyr'),
+('Postman (API Testing)'),
+('JUnit'),
+('NUnit'),
+('TestNG'),
+('JMeter'),
+('LoadRunner'),
+('JIRA, Bugzilla'),
+('CI/CD Integration Testing'),
+('Tally ERP'),
+('Zoho Books'),
+('MS Excel'),
+('QuickBooks'),
+('GST & Tax Filing'),
+('Financial Reporting'),
+('Bank Reconciliation'),
+('Budgeting & Forecasting'),
+('Ledger Management'),
+('Payroll Accounting'),
+('Cost Accounting'),
 ('JavaScript'),
-('Html'),
-('Css');
+('TypeScript'),
+('Python'),
+('Java'),
+('React'),
+('Angular'),
+('Vue'),
+('Node.js'),
+('Express'),
+('Git'),
+('GitHub'),
+('GitLab'),
+('REST APIs'),
+('GraphQL'),
+('MySQL'),
+('MongoDB'),
+('AWS'),
+('Azure'),
+('GCP'),
+('CI/CD Pipelines'),
+('Data Structures & Algorithms'),
+('HRIS, Payroll Management'),
+('Recruitment & ATS Tools'),
+('Performance Management Systems'),
+('Compensation & Benefits Analysis'),
+('Labor Law Compliance'),
+('Onboarding Tools'),
+('Exit Interview Handling');
 
 -- gender_master
 INSERT INTO gender_master (gender_name) VALUES
@@ -68,5 +118,5 @@ INSERT INTO city_master (city_name) VALUES
 ('Bangalore'),
 ('Kolkata');
 
-INSERT INTO company_details (company_name, gstin, pan) VALUES
+INSERT INTO company_details (company_name ,pan ,gstin) VALUES
 ('Karncy Ventures Private Limited' ,'SDFAC1235C' ,'36AACCO3611Q1Z7');
