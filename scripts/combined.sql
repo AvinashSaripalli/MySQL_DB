@@ -329,6 +329,7 @@ SELECT
     ud.user_id,
     ud.first_name,
     ud.last_name,
+    ud.password,
     ud.email,
     ud.phone_number,
     ud.date_of_birth,
@@ -409,3 +410,28 @@ LEFT JOIN department_master dpm ON ud.department_id = dpm.department_id
 LEFT JOIN city_master ctm ON ud.city_id = ctm.city_id
 LEFT JOIN blood_group_master bgm ON ud.blood_group_id = bgm.blood_group_id
 LEFT JOIN gender_master gm ON ud.gender_id = gm.gender_id;
+
+CREATE OR REPLACE VIEW vw_report_dlts AS
+SELECT
+    rd.report_id,
+    rd.user_id,
+    ud.first_name,
+    ud.last_name,
+    ud.email,
+    ud.role_id,
+    ud.designation_id,
+    ud.department_id,
+    ud.city_id,
+    ud.blood_group_id,
+    ud.gender_id,
+    rd.task_name,
+    rd.description,
+    rd.hours_worked,
+    rd.feedback,
+    rd.is_feedback_positive,
+    rd.created_at AS report_created_at,
+    rd.modified_at AS report_modified_at
+FROM
+    report_details rd
+JOIN
+    user_details ud ON rd.user_id = ud.user_id;
