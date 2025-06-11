@@ -141,7 +141,7 @@ CREATE TABLE report_details (
     description TEXT,
     hours_worked NUMERIC(4,0),
     feedback VARCHAR(1000),
-    is_feedback_positive BOOLEAN DEFAULT TRUE,
+    is_feedback_positive,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     modified_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT report_details_report_id_chk CHECK (report_id ~ '^REP[0-9]+$')
